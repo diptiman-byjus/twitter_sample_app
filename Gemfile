@@ -19,7 +19,7 @@ gem 'mini_magick',             '~>3.8.0'
 gem 'fog',                     '~>1.36.0'
 
 gem 'bootstrap-will_paginate', '~>0.0.10'
-gem 'sqlite3'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -50,8 +50,14 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem "graphiql-rails", "~> 1.7"
-end
 
+  gem 'sqlite3'
+
+end
+group :production do
+  gem 'pg', '~> 1.2', '>= 1.2.3'
+    #gem 'rails_12factor', '0.0.2'
+end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'rails-controller-testing', '~>1.0.4'
